@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import {
   SearchIcon,
-  GlobeAltIcon,
+  ShoppingCartIcon,
   MenuIcon,
   UserCircleIcon,
   UsersIcon,
@@ -12,7 +12,7 @@ function Header() {
   return (
     <header className="sticky top-0 z-50 grid grid-cols-3 bg-white shadow-md p-5 md:px-10">
       {/* LEFT - Logo*/}
-      <div className="relative flex items-center h-10 cursor-pointer my-auto sm:resize ">
+      <div className="relative flex items-center w-40 h-10 cursor-pointer my-auto sm:resize ">
         <Image
           src="/amaca-travel.png"
           layout="fill"
@@ -31,7 +31,7 @@ function Header() {
       </div>
       {/* RIGHT - Menu bar*/}
       <div className="flex space-x-3 items-center justify-end text-gray-500">
-        <GlobeAltIcon className="h-6 " />
+        <ShoppingCartIcon className="h-6 " />
         <div className="flex items-center space-x-3 border-2 p-2 rounded-full">
           <MenuIcon className="h-6 " />
           <UserCircleIcon className="h-6" />
