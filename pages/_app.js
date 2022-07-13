@@ -1,12 +1,17 @@
-import { CitiesWrapp } from '../Context/ContextCities'
-import '../styles/globals.css'
+// import { ActivitiesWrapp } from "../Context/activities/ContextActivities";
+import { ActivitiesWrapp } from "../Context/activities/activities";
+import { CitiesWrapp } from "../Context/cities/ContextCities";
+import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
   return (
+    <ActivitiesWrapp>
+      <CitiesWrapp>
+        <Component {...pageProps} />
+      </CitiesWrapp>
+      </ActivitiesWrapp>
 
- <CitiesWrapp><Component {...pageProps} /></CitiesWrapp>
-
-  )
+  );
 }
 
-export default MyApp
+export default MyApp;
