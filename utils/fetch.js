@@ -1,5 +1,7 @@
 const CITIES_URL = "https://api.musement.com/api/v3/cities/";
 const ACTIVITIES_URL = "https://api.musement.com/api/v3/activities/";
+const BEST_OFFERS_URL =
+  "https://api.musement.com/api/v3/activities?sort_by=rating,price&limit<=10/";
 
 const getCities = async (cityId = " ") => {
   const res = await fetch(`${CITIES_URL}${cityId}`);
@@ -16,4 +18,16 @@ const getCityActivities = async (cityId = " ") => {
   return res.json();
 };
 
-export { getCities, getActivities, getCityActivities };
+const getBestOffers = async () => {
+  const res = await fetch(`${BEST_OFFERS_URL}`, {
+    headers: {
+      "Accept-Language": "en-US",
+      "X-Musement-Currency": "USD",
+    },
+  });
+  return res.json();
+};
+
+console.log(getCities());
+
+export { getCities, getActivities, getCityActivities, getBestOffers };
