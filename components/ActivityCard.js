@@ -1,3 +1,4 @@
+import React from "react";
 import Image from "next/image";
 import { BestyApi } from "../Context/BestOffersContext/ContextBestOffers";
 
@@ -5,8 +6,11 @@ function ActivityCard() {
   return (
     <>
       {/* CARD */}
-      {BestyApi()?.map(({ title, cover_image_url, city }) => (
-        <div className="cursor-pointer hover:scale-105 transform transition duration-300 ease-out">
+      {BestyApi()?.map(({ title, cover_image_url, city, uuid }) => (
+        <div
+          key={uuid}
+          className="cursor-pointer hover:scale-105 transform transition duration-300 ease-out"
+        >
           <h2 className="text-2xl text-center">{city.name}</h2>
           <div className="relative h-72 w-80">
             <Image
